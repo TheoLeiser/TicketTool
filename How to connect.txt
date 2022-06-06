@@ -1,0 +1,4 @@
+1. Open cmd
+2. cd into this folder
+3. enter "npm run serve"
+4. enter this url in your browser : http://localhost:°PortNumberHere°/
