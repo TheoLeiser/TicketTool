@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Tickets from '../views/Tickets.vue'
-import Discussions from '../views/Discussions.vue'
 import Login from '../views/Login.vue'
 import { store } from '../store'
 
@@ -17,11 +16,6 @@ const routes = [
     path: '/tickets',
     name: 'Tickets',
     component: Tickets
-  },
-  {
-    path: '/discussions',
-    name: 'Discussions',
-    component: Discussions
   }
 ]
 
@@ -31,11 +25,6 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.fullPath === '/tickets') {
-    if (!store.id) {
-      next('/')
-    }
-  }
-  if (to.fullPath === '/discussions') {
     if (!store.id) {
       next('/')
     }

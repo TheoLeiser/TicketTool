@@ -30,6 +30,15 @@
      display: table-cell;
      vertical-align: middle;
    }
+
+   #btn_creer {
+     margin : 10px 10px 10px;
+   }
+
+   .div_flex_space-between {
+    display: flex;
+    justify-content: space-between;
+   }
   
   @media (min-width: 576px) {
     .card-columns {

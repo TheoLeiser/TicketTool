@@ -1,7 +1,6 @@
 <template>
   <div>
     <div v-if="store.role != 3"> <!-- MES TICKETS, pour USER et DEV -->
-      <input type="button" class="btn btn-success btn-xs" @click="openCreateModel" value="Creer" />
       <!-- Model de création -->
       <div v-if="createModel">
         <div class="modal-mask">
@@ -41,7 +40,10 @@
         </div>
       </div>
       <!-- Tableaux de tickets -->
-      <h1>Mes tickets</h1>
+      <div class="div_flex_space-between">
+        <h1>Mes tickets</h1>
+        <input id="btn_creer" type="button" class="btn btn-success btn-xs" @click="openCreateModel" value="Creer un nouveau ticket" />
+      </div>
       <table class="table table-bordered table-striped">
         <tr>
           <th>Titre</th>
@@ -176,7 +178,7 @@ export default {
         bodyFormData.append('titre', this.titre)
         bodyFormData.append('contenu', this.contenu)
         bodyFormData.append('severite', this.severite)
-        await axios.post('http://localhost/TickettoolBackend/creer.php', bodyFormData)
+        await axios.post('http://localhost/TickettoolBackend/createTickets.php', bodyFormData)
         this.createModel = false
         this.titre = ''
         this.contenu = ''

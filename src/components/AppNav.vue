@@ -1,13 +1,12 @@
 <template>
   <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
-    <span class="navbar-brand">TicketTool</span>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <router-link class="nav-link" to="/tickets">Tickets</router-link>
+          <span class="navbar-brand">TicketTool</span>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/discussions">Discussions</router-link>
+          <input v-if="store.role !== 0" type="button" class="btn btn-success btn-xs" @click="disconnect" value="Se déconnecter" />
         </li>
       </ul>
     </div>
@@ -15,7 +14,23 @@
 </template>
 
 <script>
+import { store } from '../store.js'
+
 export default {
-  name: 'AppNav'
+  name: 'AppNav',
+  data () {
+    return {
+      store: store
+    }
+  },
+  methods: {
+    disconnect () {
+      this.store.id = ''
+      this.store.nom = ''
+      this.store.prenom = ''
+      this.store.role = 0
+      this.$router.push('/')
+    }
+  }
 }
 </script>
