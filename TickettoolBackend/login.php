@@ -3,7 +3,7 @@
 
     $data = array(
         ':email' => $_POST['email'],
-        ':motDePasse' => $_POST['motDePasse']
+        ':motDePasse' => crypt($_POST['motDePasse'], "Bonjour, ceci est mon sel")
     );
 
     $query = "

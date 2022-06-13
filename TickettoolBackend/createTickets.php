@@ -21,8 +21,8 @@
     (titre, contenu, id_etat, id_severite)
     VALUES (:titre, :contenu, 1, :id_severite);
     INSERT INTO faire
-    (id_Utilisateur, id_action, id_ticket)
-    VALUES (:idUtilisateur, 1, (SELECT MAX(id) FROM ticket))
+    (id_Utilisateur, id_action, id_ticket, date)
+    VALUES (:idUtilisateur, 1, (SELECT MAX(id) FROM ticket), NOW())
     ";
 
     $statement = $connect->prepare($query);

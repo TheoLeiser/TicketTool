@@ -31,12 +31,21 @@
      vertical-align: middle;
    }
 
+   .div_flex_space-between {
+    display: flex;
+    justify-content: space-between;
+   }
+
    #btn_creer {
      margin : 10px 10px 10px;
    }
 
-   .div_flex_space-between {
-    display: flex;
+   #label_prenom_nom {
+    color: white;
+   }
+
+   #navbar_nav {
+    width: -webkit-fill-available;
     justify-content: space-between;
    }
   
